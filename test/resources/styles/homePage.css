@@ -1,0 +1,182 @@
+/* Designed as "mobile first" */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  "header"
+  "header"
+  "header";
+} 
+#header, #footer {
+  background: whitesmoke;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+   list-style: none; 
+   overflow: hidden; 
+  background-color: whitesmoke;
+  }
+
+  .header li a {
+    /* An experimental text-gradient over the letters */
+  background-image: linear-gradient(to bottom, #003366, black);
+  background-clip: text;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+  font-weight: bold;
+  border-bottom-color: lightsteelblue;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  display: inline-block;
+  padding: 2%;
+  /* padding: 20px 20px; */
+  /* border-right: 1px solid #f4f4f4; */
+  text-decoration: none;
+  }
+  .header li a:hover {
+    margin-left: 5px;
+    background-image: linear-gradient(to bottom, orange, red);
+    background-clip: text;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: brown;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: red;
+    text-shadow: 2px 2px 2px purple;
+    transition: text-shadow 0.15s, margin-left 0.15s;
+  }
+  .header li a:hover,
+  .header .menu-btn:hover {
+  background-color: #f4f4f4;
+  }
+  /* menu */
+  .header .menu {
+  clear: both;
+  max-height: 0;
+  /* clear: both; */
+  /* max-height: 0; */
+  transition: max-height .2s ease-out;
+  }
+  /* menu icon */
+  .header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+  } 
+  .header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+  }
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+  }
+  .header .menu-icon .navicon:before {
+  top: 5px;
+  }
+  .header .menu-icon .navicon:after {
+  top: -5px;
+  }
+  /* menu btn */
+  .header .menu-btn {
+  display: none;
+  }
+  .header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+  }
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+  }
+  /* Initially, display no sections to make page dynamically change content. When page first loads, the home section displays */
+  section {
+    display: none;
+  }
+  #home {
+    background: beige;
+    height: 300px;
+    display: block;
+  }
+  #about {
+    background: honeydew;
+    height: 300px;
+  }
+  #projects {
+    height: 300px;
+    background: seashell;
+  }
+  #skills {
+    height: 300px;
+    background: salmon;
+  }
+  /* for desktop */
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-areas: 
+    "header main main main main main"
+    "header main main main main main"
+    "footer main main main main main";
+  }
+  #header { 
+    grid-area: header;
+    border: 2px dotted blue;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    }
+    #main {
+      border: 2px dotted pink;
+    grid-area: main;
+    display: block;
+    text-align: center;
+    }
+    .header li a {
+      padding: 10%;
+    }
+    #footer {
+      border: 2px dotted orange;
+    grid-area: footer;
+    }
+    .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+    }
+    .header .menu-icon {
+    display: none;
+    }
+} 

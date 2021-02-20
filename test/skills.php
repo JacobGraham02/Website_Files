@@ -1,0 +1,1 @@
+<p>This is a skills page</p>
