@@ -7,23 +7,37 @@
 body {
   display: grid;
   height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
   grid-template-columns: 1fr;
+  grid-auto-rows: minmax(min-content, max-content) 1fr 1fr;
   grid-template-areas:
   "header"
-  "header"
-  "header";
+  "main"
+  "main";
 } 
-#header, #footer {
-  background: whitesmoke;
+#main {
+  grid-area: main;
 }
-.header ul {
+#header {
+  font-size: 75%;
+  grid-area: header;
+}
+#header, #header .menu {
+  background: #d9d9d9;
+}
+#footer {
+  display: none;
+  grid-area: footer;
+}
+.menu {
   margin: 0;
   padding: 0;
    list-style: none; 
    overflow: hidden; 
-  background-color: whitesmoke;
-  }
-
+}
+/* menu when being closed on mobile version */
   .header li a {
     /* An experimental text-gradient over the letters */
   background-image: linear-gradient(to bottom, #003366, black);
@@ -34,13 +48,8 @@ body {
   -webkit-text-fill-color: transparent;
   color: black;
   font-weight: bold;
-  border-bottom-color: lightsteelblue;
-  border-bottom-style: solid;
-  border-bottom-width: thin;
   display: inline-block;
   padding: 2%;
-  /* padding: 20px 20px; */
-  /* border-right: 1px solid #f4f4f4; */
   text-decoration: none;
   }
   .header li a:hover {
@@ -63,8 +72,6 @@ body {
   .header .menu {
   clear: both;
   max-height: 0;
-  /* clear: both; */
-  /* max-height: 0; */
   transition: max-height .2s ease-out;
   }
   /* menu icon */
@@ -105,7 +112,7 @@ body {
   display: none;
   }
   .header .menu-btn:checked ~ .menu {
-  max-height: 240px;
+  max-height: 100%;
   }
   .header .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
@@ -120,26 +127,61 @@ body {
   .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
   }
+  .underline {
+    border-radius: 10%;
+    border-bottom: 2px groove slategray;
+  }
   /* Initially, display no sections to make page dynamically change content. When page first loads, the home section displays */
-  section {
+  .c {
     display: none;
   }
   #home {
-    background: beige;
-    height: 300px;
-    display: block;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  #about {
-    background: honeydew;
-    height: 300px;
+  #personal_info {
+    border-radius: 55%;
+    border: 1px dotted red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
   }
-  #projects {
-    height: 300px;
-    background: seashell;
+  #pictureOfMe {
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
   }
-  #skills {
-    height: 300px;
-    background: salmon;
+  #social_media {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px dotted green;
+    width: 30%;
+    height: 5%;
+  }
+  #social_media figure a {
+    padding: 10px;
+    background: red;
+    text-decoration: none;
+    border-radius: 50%;
+  }
+  #social_media figure a:hover {
+    padding: 15px;
+    transition: padding 0.25s;
+  }
+  /* For the typewriter-like text */
+  #container {
+    margin: 50px 0 0 0;
+    text-align: center;
+  }
+  #text {
+    display: inline-block;
+    color: red;
+    border-right: 3px solid orange;
   }
   /* for desktop */
 @media screen and (min-width: 768px) {
@@ -149,31 +191,33 @@ body {
     grid-template-areas: 
     "header main main main main main"
     "header main main main main main"
-    "footer main main main main main";
+    "header main main main main main"
+    "header main main main main main"
+    "header main main main main main";
   }
   #header { 
+    border-right: solid #cccccc;
     grid-area: header;
-    border: 2px dotted blue;
-    justify-content: center;
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     }
     #main {
-      border: 2px dotted pink;
     grid-area: main;
-    display: block;
-    text-align: center;
     }
     .header li a {
-      padding: 10%;
+    padding: 10%;
+    font-size: 150%;
     }
     #footer {
-      border: 2px dotted orange;
+    max-height: 100%;
     grid-area: footer;
     }
     .header .menu {
+    width: 75%;
     clear: none;
-    float: right;
+    /* float: right; */
     max-height: none;
     }
     .header .menu-icon {
