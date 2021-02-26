@@ -30,10 +30,10 @@
                     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
                     <ul class="menu">
-                        <li><a href="#" data-section="#home"><i class="" title="Go to 'home' section"></i><span class="underline">Home</span></a></li>
-                        <li><a href="#" data-section="#about"><i class="" title="Go to 'about' section"></i><span class="underline">About</span></a></li>
-                        <li><a href="#" data-section="#projects"><i class="" title="Go to 'projects' section"></i><span class="underline">Projects</span></a></li>
-                        <li><a href="#" data-section="#skills"><i class="" title="Go to 'skills' section"></i><span class="underline">Skills</span></a></li>
+                        <li><a href="#" data-section="#home"><i class="fa fa-user" title="Go to 'home' section"></i><span class="underline"> Home</span></a></li>
+                        <li><a href="#" data-section="#about"><i class="fa fa-address-card" title="Go to 'about' section"></i><span class="underline"> About</span></a></li>
+                        <li><a href="#" data-section="#projects"><i class="fa fa-code" title="Go to 'projects' section"></i><span class="underline"> Projects</span></a></li>
+                        <li><a href="#" data-section="#skills"><i class="fa fa-bookmark-o" title="Go to 'skills' section"></i><span class="underline"> Skills</span></a></li>
                     </ul>
           
             </header>
@@ -43,8 +43,14 @@
                     <div id="personal_info">
                          <figure id="personalPictureFigure">
                             <img src="resources/images/personal_image.png" alt="A picture of me" id="pictureOfMe"/>
+                            
+                            <figcaption>
+                                <h1>Jacob Graham</h1>
+                            </figcaption>
                         </figure>
                     </div>
+                    
+
 
                     <div id="container">
                         <div id="text"></div>
@@ -60,21 +66,44 @@
                         </figure>
         
                         <figure>
-                             <a href="" class="fa fa-envelope link-icons"></a>
+                             <a href="mailto:jakegraham54@gmail.com" class="fa fa-envelope link-icons"></a>
                         </figure>
                     </div>
                 </section>
 
                 <section id="about" class="c">
-                    About
+                    <h2>Skills</h2>
+
+                    <article>
+                        <h3>My name is Jacob Graham and I am a <strong>computer science</strong> student</h3>
+
+                        <p>I am a creative, insightful, adaptable, and adept software developer with passion for software. I am currently a first-year 
+                           computer science student taking the joint degree-diploma program offered by Georgian-Lakehead, working towards an Honours Bachelor of 
+                           Computer Science degree from Lakehead University, and a Computer Programmer diploma from Georgian College.</p>
+                    </article>
+
+                    <div id="education">
+
+                    </div>
+
+                    <div id="current_learning">
+
+                    </div>
                 </section>
 
                 <section id="projects" class="c">
-                    Projects
+                    <h2>A bunch of divs go here to display projects and such</h2>
                 </section>
 
                 <section id="skills" class="c">
-                    Skills
+                    <h2>Skills</h2>
+                    <div id="UI/UX">
+
+                    </div>
+
+                    <div id="Full-Stack-Development">
+
+                    </div>
                 </section>
 
             </main>

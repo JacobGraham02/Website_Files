@@ -24,53 +24,53 @@ document.addEventListener("DOMContentLoaded", function() {
     // For the typewriter-like text
 
     // Sentences
-    var _CONTENT = ["Hello there","How are you","I am good, you?","I am doing very well, thank you."];
+    var CONTENT = ["Student web developer","Computer science student","Fitness enthusiast","Software developer"];
     // Current sentence being processed
-    var _PART = 0;
+    var PART = 0;
     // Character number of the current sentence being processed
-    var _PART_INDEX = 0;
+    var PART_INDEX = 0;
 
-    var _INTERVAL_VAL;
+    var INTERVAL_VAL;
 
-    var _ELEMENT = document.querySelector("#text");
+    var ELEMENT = document.querySelector("#text");
 
     // Implement typing effect
     function Type() {
-        var text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-        _ELEMENT.innerHTML = text;
-        _PART_INDEX++;
+        var text = CONTENT[PART].substring(0, PART_INDEX + 1);
+        ELEMENT.innerHTML = text;
+        PART_INDEX++;
 
         // If full sentence has been displayed, then start to delete the sentence after some time
-        if (text === _CONTENT[_PART]) {
-            clearInterval(_INTERVAL_VAL);
+        if (text === CONTENT[PART]) {
+            clearInterval(INTERVAL_VAL);
             setTimeout(function() {
-                _INTERVAL_VAL = setInterval(Delete, 50);
+                INTERVAL_VAL = setInterval(Delete, 50);
             }, 1000);
         }
     }
 
     // Implements deleting effect
     function Delete() {
-        var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-        _ELEMENT.innerHTML = text;
-        _PART_INDEX--;
+        var text = CONTENT[PART].substring(0, PART_INDEX - 1);
+        ELEMENT.innerHTML = text;
+        PART_INDEX--;
 
         // If sentence has been deleted then start to display the next sentence
         if (text === '') {
-            clearInterval(_INTERVAL_VAL);
+            clearInterval(INTERVAL_VAL);
 
-            if (_PART == (_CONTENT.length - 1)) 
-                _PART = 0;
+            if (PART == (CONTENT.length - 1)) 
+                PART = 0;
             else 
-                _PART++;
-            _PART_INDEX = 0;
+                PART++;
+            PART_INDEX = 0;
 
             // Start to display the next sentence after some time
             setTimeout(function() {
-                _INTERVAL_VAL = setInterval(Type, 100);
+                INTERVAL_VAL = setInterval(Type, 100);
             }, 200);
         }
     }
     // Start the typing effect on load
-    _INTERVAL_VAL = setInterval(Type, 100);
+    INTERVAL_VAL = setInterval(Type, 100);
 });

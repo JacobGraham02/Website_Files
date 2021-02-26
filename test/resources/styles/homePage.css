@@ -49,19 +49,18 @@ body {
   color: black;
   font-weight: bold;
   display: inline-block;
-  padding: 2%;
+  padding: 3%;
   text-decoration: none;
   }
   .header li a:hover {
     margin-left: 5px;
-    background-image: linear-gradient(to bottom, orange, red);
+    background-image: linear-gradient(to bottom, orangered, red);
     background-clip: text;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: brown;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: red;
-    text-shadow: 2px 2px 2px purple;
+    text-shadow: 2px 2px 2px #ff0000;
     transition: text-shadow 0.15s, margin-left 0.15s;
   }
   .header li a:hover,
@@ -135,6 +134,7 @@ body {
   .c {
     display: none;
   }
+  /* For 'home' section */
   #home {
     height: 100%;
     display: flex;
@@ -144,13 +144,32 @@ body {
   }
   #personal_info {
     border-radius: 55%;
-    border: 1px dotted red;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 20%;
   }
+  #personalPictureFigure {
+    text-align: center;
+  }
+  #personalPictureFigure figcaption {
+    margin-top: 10px;
+    color: black;
+    background-image: linear-gradient(to bottom, black, #003399);
+    background-clip: text;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 1px black;
+    font-size: 150%;
+    letter-spacing: 1px;
+
+  }
   #pictureOfMe {
+    /* offset-x, offset-y, blur-radius, spread-radius, color */
+    box-shadow: 0 0 4px 4px #333;
     border-radius: 50%;
     max-width: 100%;
     max-height: 100%;
@@ -159,7 +178,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px dotted green;
     width: 30%;
     height: 5%;
   }
@@ -170,19 +188,35 @@ body {
     border-radius: 50%;
   }
   #social_media figure a:hover {
-    padding: 15px;
+    padding: 12px;
     transition: padding 0.25s;
+    transition-timing-function: ease-in-out;
   }
   /* For the typewriter-like text */
   #container {
+    padding: 10px;
+    height: 4%;
     margin: 50px 0 0 0;
     text-align: center;
   }
   #text {
+    font-size: 150%;
     display: inline-block;
-    color: red;
-    border-right: 3px solid orange;
+    color: black;
+    background-image: linear-gradient(to bottom, gray, #003399);
+    background-clip: text;
+    font-weight: bold;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: slategrey;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: gray; 
+    text-shadow: 1px 1px 1px gray;
+    font-size: 1em;
   }
+  /* For 'about' section */
+
+
   /* for desktop */
 @media screen and (min-width: 768px) {
   body {
