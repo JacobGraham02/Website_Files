@@ -1,30 +1,55 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const menu_links = document.querySelectorAll('.menu a');
+    const MENU_LINKS = document.querySelectorAll('.menu a');
+    const WEBSITE_SECTION = document.querySelectorAll('.websiteSection');
+    const CURRENT_SECTION = "currentSectionOpen";
+    const CURRENT_LINK_VISITING = "addActiveLinkStyle";
 
-    menu_links.forEach(link => link.addEventListener("click", function() {
-        document.querySelector(".menu-btn").checked = false;
-    }))
+    closeMenuWhenLinkClicked();
+    setSectionToActiveWhenClicked();
+    setDefaultLinkStyling();
 
-    // JQuery's addEventListener()
-    $("a").on("click", function() {
-        var id=$(this).data("section"); // Reference the current anchor object; 'this'
+    function setDefaultLinkStyling(){
+        MENU_LINKS[0].classList.add(CURRENT_LINK_VISITING);
+    }
 
-        $("section:visible").fadeOut(250, function() { // Fade time in milliseconds
-            $(id).fadeIn(250);
-        });
-    });
-
+    function closeMenuWhenLinkClicked() {
+         MENU_LINKS.forEach(link => link.addEventListener("click", function() {
+            document.querySelector(".menu-btn").checked = false;
+        }))
+    }
+    function setSectionToActiveWhenClicked() {
+        for (let i = 0; i < MENU_LINKS.length; i++) {
+            MENU_LINKS[i].addEventListener('click', function() {
+                WEBSITE_SECTION.forEach(section => removeClassFromSection(section, CURRENT_SECTION));
+                MENU_LINKS.forEach(link =>  removeStylingFromActiveLink(link, CURRENT_LINK_VISITING));
+                addClassToSection(WEBSITE_SECTION[i], CURRENT_SECTION);
+                addStylingToActiveLink(MENU_LINKS[i], CURRENT_LINK_VISITING);
+            });
+        }
+    }
+    function addClassToSection(section, t) {
+        section.classList.add(t);
+    }
+    function removeClassFromSection(section, t) {
+        section.classList.remove(t);
+    }
+    function addStylingToActiveLink(link, t) {
+        link.classList.add(t);
+    }
+    function removeStylingFromActiveLink(link, t) {
+        link.classList.remove(t);
+    }
     // Collapse menu if a link is selected
     if (window.innerWidth <= 768) {
         $('.menu a').on("click", function() {
             $('.menu-btn').prop('checked', false);
         });
     }
-
+    
     // For the typewriter-like text
 
     // Sentences
-    var CONTENT = ["Student web developer","Computer science student","Fitness enthusiast","Software developer"];
+    var CONTENT = ["Junior full stack developer","Computer science student","Outdoorsman","Software developer"];
     // Current sentence being processed
     var PART = 0;
     // Character number of the current sentence being processed
