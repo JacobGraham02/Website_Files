@@ -158,14 +158,15 @@
                     <article id="projectsContainer">
                         <div id="project1" class="projectDiv">
                             <figure>
-                                <a href="" title="A placeholder image for a project imag"><img src="resources/images/placeholder.png" 
+                                <a href="https://jacobgraham02.github.io/" title="A placeholder image for a project imag">
+                                <img src="resources/images/radiobuzzWebsiteProject.png" 
                                 alt="A picture of my project" title="A container for my project"></a></img>
                             </figure>
                         </div>
 
                         <div id="project2" class="projectDiv">
                             <figure>
-                                <a href="" title=""><img src="resources/images/placeholder.png" 
+                                <a href="" title=""><img src="resources/images/php_crud_application.png" 
                                 alt="A picture of my project" title="A container for my project"></a></img>
                             </figure>
                         </div>
