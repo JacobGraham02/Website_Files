@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const WEBSITE_SECTION = document.querySelectorAll('.websiteSection');
     const CURRENT_SECTION = "currentSectionOpen";
     const CURRENT_LINK_VISITING = "addActiveLinkStyle";
+    const PROJECT_DIVS = document.querySelectorAll('.projectDiv');
 
     closeMenuWhenLinkClicked();
     setSectionToActiveWhenClicked();
     setDefaultLinkStyling();
+
+    // PROJECT_DIVS.forEach(div => div.addEventListener('mouseover', () => div.classList.add("overlay")));
+    // PROJECT_DIVS.forEach(div => div.addEventListener('mouseout', () => div.classList.remove("overlay")));
 
     function setDefaultLinkStyling(){
         MENU_LINKS[0].classList.add(CURRENT_LINK_VISITING);
@@ -49,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // For the typewriter-like text
 
     // Sentences
-    var CONTENT = ["Junior full stack developer","Computer science student","Outdoorsman","Software developer"];
+    const CONTENT = ["Junior full stack developer","Computer science student","Nature enthusiast","Software developer"];
     // Current sentence being processed
     var PART = 0;
     // Character number of the current sentence being processed
@@ -57,11 +61,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var INTERVAL_VAL;
 
-    var ELEMENT = document.querySelector("#text");
+    const MILLISECONDS_UNTIL_DELETE = 50;
+
+    const INTERVAL_BETWEEN_SENTENCES = 50;
+
+    const MILLISECONDS_FOR_DELETE = 1000;
+
+    const MILLISECONDS_BETWEEN_TYPING = 50;
+
+    const ONLOAD_SENTENCE_DISPLAY_TIME = 50;
+
+    const ELEMENT = document.querySelector("#text");
 
     // Implement typing effect
     function Type() {
-        var text = CONTENT[PART].substring(0, PART_INDEX + 1);
+        let text = CONTENT[PART].substring(0, PART_INDEX + 1);
         ELEMENT.innerHTML = text;
         PART_INDEX++;
 
@@ -69,14 +83,14 @@ document.addEventListener("DOMContentLoaded", function() {
         if (text === CONTENT[PART]) {
             clearInterval(INTERVAL_VAL);
             setTimeout(function() {
-                INTERVAL_VAL = setInterval(Delete, 50);
-            }, 1000);
+                INTERVAL_VAL = setInterval(Delete, MILLISECONDS_UNTIL_DELETE);
+            }, MILLISECONDS_FOR_DELETE);
         }
     }
 
     // Implements deleting effect
     function Delete() {
-        var text = CONTENT[PART].substring(0, PART_INDEX - 1);
+        let text = CONTENT[PART].substring(0, PART_INDEX - 1);
         ELEMENT.innerHTML = text;
         PART_INDEX--;
 
@@ -92,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Start to display the next sentence after some time
             setTimeout(function() {
-                INTERVAL_VAL = setInterval(Type, 100);
-            }, 200);
+                INTERVAL_VAL = setInterval(Type, INTERVAL_BETWEEN_SENTENCES);
+            }, MILLISECONDS_BETWEEN_TYPING);
         }
     }
     // Start the typing effect on load
-    INTERVAL_VAL = setInterval(Type, 100);
+    INTERVAL_VAL = setInterval(Type, ONLOAD_SENTENCE_DISPLAY_TIME);
 });

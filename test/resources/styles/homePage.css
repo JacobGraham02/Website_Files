@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 * {
     font-family: 'Merriweather', serif;
@@ -24,6 +25,7 @@ body {
   grid-area: main;
 }
 #header {
+  border-bottom: solid #cccccc;
   font-size: 75%;
   grid-area: header;
 }
@@ -35,27 +37,27 @@ body {
   grid-area: footer;
 }
 .menu {
-  margin: 0;
-  padding: 0;
+   margin: 0;
+   padding: 0;
    list-style: none; 
    overflow: hidden; 
 }
 /* menu when being closed on mobile version */
   .header li a {
-    /* An experimental text-gradient over the letters */
-  background-image: linear-gradient(to bottom, #003366, black);
-  background-image: -moz-linear-gradient(to bottom, #003366, black);
-  background-image: -webkit-linear-gradient(to bottom, #003366, black);
-  background-clip: text;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;
-  -webkit-background-clip:text;
-  -webkit-text-fill-color: transparent;
-  color: black;
-  font-weight: bold;
-  display: inline-block;
-  padding: 3%;
-  text-decoration: none;
+    padding: 3%;
+    font-size: 110%;
+    background-image: linear-gradient(to bottom, #003366, black);
+    background-image: -moz-linear-gradient(to bottom, #003366, black);
+    background-image: -webkit-linear-gradient(to bottom, #003366, black);
+    background-clip: text;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
   }
   .header li a:hover {
     margin-left: 5px;
@@ -130,7 +132,6 @@ body {
   .header .menu-icon .navicon:after {
   top: -5px;
   }
-  /* menu btn */
   .header .menu-btn {
   display: none;
   }
@@ -159,14 +160,13 @@ body {
   top: 0;
   }
   .underline {
-    border-radius: 10%;
+    /* border-radius: 10%; */
     border-bottom: 2px groove slategray;
   }
   #personalPictureFigure {
     text-align: center;
   }
   #personalPictureFigure figcaption {
-    margin-top: 10px;
     color: black;
     background-image: linear-gradient(to bottom, black, #003399);
     background-clip: text;
@@ -186,22 +186,18 @@ body {
     -webkit-box-shadow: 0 0 4px 4px #333;
     box-shadow: 0 0 4px 4px #333;
     border-radius: 50%;
-    max-width: 100%;
-    max-height: 100%;
   }
   #social_media {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 5%;
   }
   #social_media_container {
     display: flex;
     justify-content: center;
   }
   #social_media figure a {
-    padding: 15px;
+    padding: 10px;
     margin: 10px;
     background: red;
     color: white;
@@ -211,7 +207,7 @@ body {
     -webkit-transition: padding 0.25s ease-in-out;
   }
   #social_media figure a:hover {
-    padding: 12px;
+    padding: 11px;
   }
   /* For the typewriter-like text */
   #container {
@@ -259,9 +255,8 @@ body {
   }
   .currentSectionOpen .underlineForH2 {
     background: red;
-    height: 75%;
+    height: 25%;
     display: block;
-    height: 5px;
     position: relative;
     width: 8%;
   }
@@ -271,12 +266,16 @@ body {
     background: red;
     content: '';
     display: block;
-    height: 75%;
+    height: 25%;
     position: relative;
     width: 50%;
   }
 
   /* 'About' page */
+  #about {
+    line-height: 1.5;
+    font-size: 75%;
+  }
   #aboutMeArticle {
     /* font-weight: 600; */
     line-height: 150%;
@@ -287,6 +286,11 @@ body {
     font-size: 120%;
     margin-bottom: 2%;
   }
+  /* The span containing the words 'Computer Science student' on 'About' page */
+  #computerScienceStudentSentence {
+    font-weight: bold;
+    color: red;
+  }
   #educationContainer {
     -webkit-box-shadow: 0 0 3px black;
     -moz-box-shadow: 0 0 3px black; 
@@ -294,8 +298,9 @@ body {
     border-radius: 3%;
     margin-bottom: 2%;
     background: whitesmoke;
-    text-align: start;
     width: 100%;
+    text-align: start;
+    /* text-indent: 3%; */
     height: fit-content;
   }
   #learningContainer {
@@ -313,7 +318,7 @@ body {
     padding: 2%;
   }
   .learningArticle {
-    padding: 2%;
+    padding: 4%;
   }
   #educationAndLearningContainer {
     margin: 2%;
@@ -332,6 +337,9 @@ body {
     text-align: center;
   }
   /* This is the 'projects' section */
+  #projects {
+    font-size: 75%;
+  }
   #projectsContainer {
     margin: 2%;
     width: 80%;
@@ -342,30 +350,64 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+  .overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: lightgray;
+    opacity: 0;
+    border: 2px solid darkgray;
+    background: black;
+    position: absolute;
+    height: 304px;
+    width: 401px;
+  }
+   .overlayChildContainer {
+    right: 5px;
+    bottom: 5px;
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .overlayChildIcon {
+    background: gray;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+  } 
+  .projectDiv:hover .overlay {
+    transition: opacity 0.2s;
+    opacity: 0.65;
+  }
   .projectDiv {
-    display: relative;
     padding: 1%;
+    border: 2px solid black;
+    display: relative;
     flex-basis: 100%; 
   }
   .projectDiv figure {
     border: 3px solid black;
     display: block;
   }
-  .projectDiv figure:hover {
-    transition: box-shadow 2s;
-    -webkit-transition: box-shadow 0.25s;
-    box-shadow: 0 0 40px 0 slategray;
-    -webkit-box-shadoow: 0 0 40px 0 slategray;
-    -moz-box-shadow: 0 0 40px 0 slategray;
-  }
   .projectDiv figure img {
-    max-width: 100%;
-    max-height: 100%;
+    height: 300px;
+    width: 400px;
+    /* max-width: 75%;
+    max-height: 50%; */
   }
 
   /* This is the 'skills' page */
+  #skills {
+    line-height: 1.5;
+    font-size: 75%;
+  }
   #skillsContainer {
-
     margin: 10%;
     width: 80%;
     display: -ms-flexbox;
@@ -413,9 +455,11 @@ body {
   }
   .skillDiv:hover {
     /* box-shadow: none|h-offset|v-offset|blur|spread|color {inset, initial, inherit} */
-    box-shadow: 0 0 40px 0 slategray;
-    -webkit-box-shadoow: 0 0 40px 0 slategray;
-    -moz-box-shadow: 0 0 40px 0 slategray;
+    transition: box-shadow 2s;
+    -webkit-transition: box-shadow 0.25s;
+    box-shadow: 0 0 15px 0 slategray;
+    -webkit-box-shadoow: 0 0 15px 0 slategray;
+    -moz-box-shadow: 0 0 15px 0 slategray;
   }
   .skillDiv:hover i {
     background: red;
@@ -426,8 +470,11 @@ body {
     height: 100%;
     justify-content: center;
   }
+  .topics {
+    line-height: 150%;
+  }
   /* for desktop */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1199px) {
   body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
@@ -452,8 +499,9 @@ body {
     grid-area: main;
     }
     .header li a {
-    padding: 10%;
-    font-size: 150%;
+      margin: 20px;
+      padding: 0;
+      font-size: 150%;
     }
     #footer {
     max-height: 100%;
@@ -470,6 +518,13 @@ body {
     .currentSectionOpen h2 {
       font-size: 200%;
     }
+    /* For 'About' page */
+    #about {
+      font-size: 90%;
+    }
+    #skills {
+      font-size: 90%;
+    }
     #educationAndLearningContainer {
       height: 68vh;
       flex-direction: row;
@@ -483,12 +538,12 @@ body {
       margin-left: 1%;
     }
     /* For project page */
-    /* flex-basis calculates how many items should be on 1 'row' */
+    /* flex-basis calculates how many items should be on one row */
     .projectDiv {
-      flex-basis: calc(100% / 2); 
+      padding: 0;
+      flex-basis: 30%;
     }
     /* for 'skills' page */
-   /* This is the 'skills' page */
   #skillsContainer {
     margin: 10%;
     width: 80%;
