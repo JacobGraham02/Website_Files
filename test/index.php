@@ -22,10 +22,10 @@
                 <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 
                 <ul class="menu">
-                    <li><a href="#" data-section="#home"><i class="fa fa-user" title="Go to 'home' section"></i><span class="underline"><pre>Home</pre></span></a></li>
-                    <li><a href="#" data-section="#about"><i class="fa fa-address-card" title="Go to 'about' section"></i><span class="underline"> <pre>About</pre></span></a></li>
-                    <li><a href="#" data-section="#projects"><i class="fa fa-code" title="Go to 'projects' section"></i><span class="underline"> <pre>Projects</pre></span></a></li>
-                    <li><a href="#" data-section="#skills"><i class="fa fa-bookmark-o" title="Go to 'skills' section"></i><span class="underline"> <pre>Skills</pre></span></a></li>
+                    <li><a href="#" data-section="#home"><i class="fa fa-user" title="Go to home section"></i><span class="underline"><pre>Home</pre></span></a></li>
+                    <li><a href="#" data-section="#about"><i class="fa fa-address-card" title="Go to about section"></i><span class="underline"> <pre>About</pre></span></a></li>
+                    <li><a href="#" data-section="#projects"><i class="fa fa-code" title="Go to projects section"></i><span class="underline"> <pre>Projects</pre></span></a></li>
+                    <li><a href="#" data-section="#skills"><i class="fa fa-bookmark-o" title="Go to skills section"></i><span class="underline"> <pre>Skills</pre></span></a></li>
                 </ul>
           
             </header>
@@ -34,7 +34,7 @@
                 <section id="home" class="websiteSection currentSectionOpen">
                     <div id="personal_info">
                          <figure id="personalPictureFigure">
-                            <img src="resources/images/personal_image.png" alt="A picture of me" id="pictureOfMe"/>
+                            <img src="resources/images/good_personal_picture.jpg" alt="A picture of me" id="pictureOfMe"/>
                             
                             <figcaption>
                                 <h1>Jacob Graham</h1>
@@ -116,7 +116,9 @@
                                 </ul>
                             </div>
                             
+                            
                         </article>
+                        
                     </div>
 
                     <div id="learningContainer">
@@ -159,27 +161,26 @@
 
                     <article id="projectsContainer">
                         <div id="project1" class="projectDiv">
-                            <div class="overlay"><h4>Mock radio and other audio source sales website | COMP1002 final project</h4>
+                            <div class="overlay"><h4>Mock radio and other audio sources sales website | COMP1002 final project</h4>
                                 <div class="overlayChildContainer">
                                     
-                                    <span class="overlayChildIcon"><a href="https://jacobgraham02.github.io/" title="A placeholder image for a project"><i class="fa fa-search"></i></span>
+                                    <span class="overlayChildIcon"><a href="https://jacobgraham02.github.io/" title="Mock radio and other audio sources sales website | COMP1002 final project"><i class="fa fa-search"></i></span>
                                     
                                 </div>
                             </div>
                                 <figure>
-                                    <img src="resources/images/RadioBuzzWebsiteProject.png" alt="A picture of my project" title="A container for my project"/></a>
+                                    <img src="resources/images/RadioBuzzWebsiteProject.png" alt="Mock radio and other audio sources sales website" title="Mock radio and other audio sources sales website | COMP1002 final project"/></a>
                                 </figure>  
                         </div>
 
                         <div id="project2" class="projectDiv">
                             <div class="overlay"><h4>Mini zombie-shooter game | Grade 12 Computer Science final project</h4>
                                 <div class="overlayChildContainer">
-                                    <span class="overlayChildIcon"><a href="https://github.com/JacobGraham02/First_game_2019" title="A placeholder image for a project"><i class="fa fa-search"></i></span>
+                                    <span class="overlayChildIcon"><a href="https://github.com/JacobGraham02/First_game_2019" title="Mini zombie shooter game. Grade 12 Computer Science final project"><i class="fa fa-search"></i></span>
                                 </div>
                             </div>
                                 <figure>                               
-                                    <img src="resources/images/firstGame.png" alt="A picture of my project" title="A container for my 
-                                    project"/></a>
+                                    <img src="resources/images/firstGame.png" alt="Mini zombie shooter game" title="Mini zombie shooter game. Grade 12 Computer Science final project"/></a>
                                 </figure>
                         </div>
                     </article>
